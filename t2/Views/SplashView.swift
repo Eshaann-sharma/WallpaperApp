@@ -14,7 +14,7 @@ struct SplashView: View {
 
     var body: some View {
         if view {
-            ContentView().preferredColorScheme(.dark)
+            MainView().preferredColorScheme(.dark)
         }
         else{
             Image("skull")
