@@ -1,50 +1,113 @@
-//
-//  ContentView.swift
-//  t2
-//
-//  Integrate backend to this app 
-//
-
 import SwiftUI
+import SDWebImageSwiftUI
+import Photos
+import Firebase
 
 struct ContentView: View {
     
-    @State private var wallpapers: [Wallpapers] = WallpaperList.Top
+    @EnvironmentObject var vm: DataManager
+    @State private var showAllImages1: Bool = false
+    @State private var showAllImages2: Bool = false
     
     var body: some View {
-        NavigationView{
-            List(wallpapers , id:\.id ){i in
-                NavigationLink(destination: DetailedView(wal: i), label: {
-                    HStack{
-                        Image(i.imgName)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 120,height: 70)
-                            .cornerRadius(5)
-                        
-                        VStack(alignment: .leading) {
-                            Text(i.wallpaperName)
-                                .fontWeight(.semibold)
-                                .lineLimit(2)
-                            
-                            Text(i.category)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
+        ZStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack {
+                    HStack {
+                        Text("Nature")
+                            .font(.headline)
+                        Spacer()
+                        Button(action: {
+                            showAllImages1 = true
+                        }) {
+                            Text("View All")
                         }
-                        .padding(.trailing)
                     }
-                })
-            }.navigationTitle("Wallpapers")
+                    .padding(.horizontal)
+                    
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            ForEach(vm.imageUrl.prefix(4), id: \.self) { url in
+                                WebImage(url: URL(string: url))
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 280, height: 170)
+                                    .cornerRadius(15)
+                                    .onTapGesture {
+                                        vm.selectedImage = url
+                                    }
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                }
+                .padding(.vertical)
+                
+                VStack {
+                    HStack {
+                        Text("Exotic Cars")
+                            .font(.headline)
+                        Spacer()
+                        Button(action: {
+                            showAllImages1 = true
+                        }) {
+                            Text("View All")
+                        }
+                    }
+                    .padding(.horizontal)
+                    
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            ForEach(vm.imageUrlCars.prefix(4), id: \.self) { url in
+                                WebImage(url: URL(string: url))
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 180, height: 350)
+                                    .cornerRadius(15)
+                                    .onTapGesture {
+                                        vm.selectedImage = url
+                                    }
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                }
+                .padding(.vertical)
+            }
+            .onAppear {
+                vm.loadImage(name: "images") { url in
+                    vm.imageUrl.append(url)
+                }
+                vm.loadImage(name: "cars") { url in
+                    vm.imageUrlCars.append(url)
+                }
+            }
+            .padding(.top)
+            .padding(.horizontal,5)
+            if vm.selectedImage != nil{
+                ImageView()
+            }
+        }
+    }
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+                .environmentObject(DataManager())
+        }
+    }
+    
+    struct ImageViewUrl: View {
+        let url: String
+        
+        var body: some View {
+            WebImage(url: URL(string: url))
+                .resizable()
+                .scaledToFit()
+                .frame(width: 160, height: 350)
+                .cornerRadius(10)
         }
     }
 }
-
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
-

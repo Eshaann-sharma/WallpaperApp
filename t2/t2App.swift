@@ -9,7 +9,7 @@ import Firebase
 
 @main
 struct t2App: App {
-    
+    @StateObject var vm = DataManager()
     init(){
         FirebaseApp.configure()
     }
