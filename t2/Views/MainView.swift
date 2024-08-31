@@ -16,6 +16,7 @@ struct MainView: View {
         VStack{
             TabView(selection: $currentTab){
                 ContentView()
+                    .environmentObject(DataManager())
                     .tag(Tab.home)
                 SearchView()
                     .tag(Tab.search)

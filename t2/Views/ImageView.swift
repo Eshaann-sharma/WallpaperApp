@@ -62,4 +62,5 @@ struct ImageView: View {
 
 #Preview {
     ImageView()
+        .environmentObject(DataManager())
 }

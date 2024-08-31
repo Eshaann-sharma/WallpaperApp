@@ -12,7 +12,6 @@ struct CustomTabBar: View {
     var body: some View {
         GeometryReader{ proxy in
             HStack{
-                Image("house").resizable().frame(width: 10,height: 10)
                 ForEach(Tab.allCases,id:\.rawValue){tab in
                     Button{
                         withAnimation(.easeIn(duration: 0.2)){
@@ -20,7 +19,6 @@ struct CustomTabBar: View {
                         }
                     }label: {
                         Image(systemName:tab.rawValue)
-//                            .renderingMode(.template)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 24,height: 24)

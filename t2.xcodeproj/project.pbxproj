@@ -103,9 +103,9 @@
 				E29E632B2A4985C800AE5C23 /* SplashView.swift */,
 				E26E14C42C8255A100B6D73B /* ImageView.swift */,
 				E29DB7552AB5AE5100615EB7 /* MainView.swift */,
-				E29DB7512AB5A1BD00615EB7 /* SearchView.swift */,
 				E24CBCD42A33A56000592904 /* ContentView.swift */,
 				E26E14C62C8317F100B6D73B /* ViewAllImages.swift */,
+				E29DB7512AB5A1BD00615EB7 /* SearchView.swift */,
 				E29DB7572AB5B87900615EB7 /* FavView.swift */,
 			);
 			path = Views;

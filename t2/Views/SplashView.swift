@@ -1,10 +1,3 @@
-//
-//  SplashView.swift
-//  t2
-//
-
-//  to do - invert the image color only if dark mode active
-//
 import SwiftUI
 
 struct SplashView: View {
@@ -15,13 +8,11 @@ struct SplashView: View {
     var body: some View {
         if view {
             MainView().preferredColorScheme(.dark)
-                .environmentObject(DataManager())
         }
         else{
-            Image("skull")
+            Image("Logo")
                 .resizable()
                 .frame(width: size ,height: size)
-                .colorInvert()
                 .onAppear{
                     withAnimation(.easeIn(duration: 0.8)){
                         self.size = 100.0
