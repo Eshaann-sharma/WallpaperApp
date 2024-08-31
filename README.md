@@ -1,23 +1,21 @@
 # Wallpaper App
 
-Wallpaper app for ios devices made using SwiftUI. The primary features of the app are:
-  1. Userfriendly and simple user interface
-  2. Search bar to search wallpapers based on there tags
+A sleek and user-friendly wallpaper app for iOS devices, developed using SwiftUI and Firebase. This app provides users with a seamless experience to explore and download high-definition wallpapers. Key features include:
+  1. Intuitive User Interface: Designed with simplicity and ease of use in mind, ensuring a smooth user experience.
+  2. Firebase Integration: Efficiently stores and fetches high-quality wallpapers using Firebase, ensuring fast and reliable access to a vast collection.
+  3. Splash Screen: A visually appealing splash screen enhances the user experience during app launch.
 
 
 ## Future Improvements/Features
 
-1. Addition of a like feature.
-2. Shifting backend data to an online database.
-3. Personal suggestions for the user based on the liked wallpapers.
-4. Making UI more appealing and eye-catching.
+1. Like Feature: Introduce a "like" functionality, allowing users to favorite wallpapers and create a personalized collection.
+2. User Accounts: Enable user accounts to sync favorites and preferences across devices, offering a consistent experience.
+3. Community Sharing: Enable users to upload and share their wallpapers with the community, creating a vibrant and diverse collection.
 
 
 ## Preview
 
 
-<img width="300" alt="home page" src="https://github.com/Eshaann-sharma/WallpaperApp/assets/77952783/ae7197fb-ee8d-4694-bc68-7087d22813a3">
-<img width="296" alt="detail page" src="https://github.com/Eshaann-sharma/WallpaperApp/assets/77952783/93271ac9-4936-40e4-9df2-568c70a8b7cc">
-<img width="307" alt="search page" src="https://github.com/Eshaann-sharma/WallpaperApp/assets/77952783/c565b5a5-ee82-49b1-bc9c-a4b2239b3d71">
-
-
+<img width="300" alt="home page" src="https://github.com/user-attachments/assets/16f2f01e-a264-4557-83de-fc049de72fca">
+<img width="300" alt="ImageView" src="https://github.com/user-attachments/assets/ae8a30ec-24a4-4aa6-a97e-2902bd07c75c">
+<img width="300" alt="ViewAllImages" src="https://github.com/user-attachments/assets/865e0719-96eb-4a1a-8fbb-3ad63e783d36">
