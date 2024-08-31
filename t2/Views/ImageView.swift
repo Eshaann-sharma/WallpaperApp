@@ -13,7 +13,7 @@ struct ImageView: View {
                 WebImage(url: URL(string: vm.selectedImage ?? ""))
                     .resizable()
                     .scaledToFill()
-                    .frame(maxWidth: UIScreen.main.bounds.width - 60,
+                    .frame(maxWidth: UIScreen.main.bounds.width - 50,
                             maxHeight: UIScreen.main.bounds.height - 200)
                     .clipped()
                     .cornerRadius(15)
@@ -51,8 +51,8 @@ struct ImageView: View {
                                     .padding(6)
                                     .background(.white.opacity(6))
                                     .clipShape(Circle())
-                            }
-                            Spacer()
+                            }.padding()
+                            
                         }
                 }.padding()
             }

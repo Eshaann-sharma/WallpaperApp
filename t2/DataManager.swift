@@ -7,6 +7,8 @@ import Photos
 class DataManager: ObservableObject{
     @Published var imageUrl = [String]()
     @Published var imageUrlCars = [String]()
+    @Published var imageUrlValorant = [String]()
+    @Published var imageUrlAnime = [String]()
     @Published var circleProgress : CGFloat = 0.0
     @Published var animatedCircle : Bool = false
     @Published var selectedImage : String? = nil
