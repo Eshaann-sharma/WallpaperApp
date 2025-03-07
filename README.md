@@ -11,6 +11,7 @@ A sleek and user-friendly wallpaper app for iOS devices, developed using SwiftUI
 1. Like Feature: Introduce a "like" functionality, allowing users to favorite wallpapers and create a personalized collection.
 2. User Accounts: Enable user accounts to sync favorites and preferences across devices, offering a consistent experience.
 3. Community Sharing: Enable users to upload and share their wallpapers with the community, creating a vibrant and diverse collection.
+4. Wallpaper Generation: Allow users to generate wallpapers using prompts and share wallpapers to community.
 
 
 ## Preview
